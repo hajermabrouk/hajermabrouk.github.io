@@ -915,6 +915,20 @@ body {
   font-size: 2rem;
   margin-bottom: 0.8rem;
 }
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 450px;
+}
 
 .project-page h2 {
   font-size: 1.6rem;
@@ -1512,3 +1526,4 @@ code {
     padding: 1.1rem 1.1rem 1.3rem;
   }
 }
+
