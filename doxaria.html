@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Doxaria – AI Solution pour les documents médicaux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="topbar">
+    <div class="logo">HM.</div>
+    <nav class="nav-links">
+      <a href="index.html#accueil">Accueil</a>
+      <a href="index.html#presentation">Présentation</a>
+      <a href="index.html#projets" class="active">Projets</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- CONTENU DU PROJET -->
+  <main class="section project-page">
+    <p class="project-back">
+      <a href="index.html#projets">← Retour aux projets</a>
+    </p>
+
+    <!-- Nom & description courte -->
+    <header class="project-header">
+      <h1 class="project-title-centered">
+        Doxaria – AI Solution pour les documents médicaux
+      </h1>
+
+      <p class="project-subtitle">
+        Doxaria est une plateforme intelligente, basée sur l’IA, qui automatise
+        le traitement des documents médicaux et des demandes de remboursement.
+        Elle combine reconnaissance d’écriture manuscrite, prédiction de
+        remboursement et assistant conversationnel pour réduire les erreurs
+        humaines et accélérer la prise de décision.
+      </p>
+
+      <div class="project-meta-grid">
+        <span class="meta-pill">🏥 Santé & Assurance</span>
+        <span class="meta-pill">🧠 Handwriting OCR</span>
+        <span class="meta-pill">💰 Reimbursement Prediction</span>
+        <span class="meta-pill">🤖 Chatbot IA</span>
+        <span class="meta-pill">📄 TDSP & Web App</span>
+      </div>
+    </header>
+
+
+    <!-- Objectifs -->
+    <section>
+       <h2 class="general-title"> Objectif </h2>
+
+  <p class="general-text">
+    L’objectif principal de <strong>Doxaria</strong> est d’automatiser et d’optimiser
+    le traitement des documents médicaux et des demandes de remboursement grâce à 
+    l’Intelligence Artificielle. La solution vise à <strong>réduire les tâches manuelles</strong>,
+    <strong>accélérer la prise de décision</strong>, <strong>améliorer la précision</strong> 
+    des extractions OCR et <strong>standardiser l’analyse</strong> des documents de santé.
+  </p>
+
+  <ul class="general-list">
+    <li>Réduire la charge de travail liée au traitement manuel des documents médicaux.</li>
+    <li>Accélérer le processus de remboursement pour les institutions et les patients.</li>
+    <li>Limiter les erreurs humaines grâce à des modèles IA robustes.</li>
+    <li>Structurer automatiquement des documents hétérogènes (bulletins, ordonnances, factures).</li>
+    <li>Améliorer la transparence et la qualité des décisions de remboursement.</li>
+    <li>Proposer une interface moderne intégrant un assistant IA contextuel et interactif.</li>
+  </ul>
+</section>
+
+
+    <!-- Technologies / prérequis -->
+    <section>
+      <h2>Technologies utilisées & prérequis</h2>
+
+      <div class="tech-grid">
+        <article class="tech-card">
+          <h3>AI / Machine Learning</h3>
+          <ul>
+            <li>PyTorch, Keras</li>
+            <li>Transformers (TrOCR)</li>
+            <li>Scikit-learn, XGBoost</li>
+          </ul>
+        </article>
+
+        <article class="tech-card">
+          <h3>Vision & OCR</h3>
+          <ul>
+            <li>TrOCR (Microsoft)</li>
+            <li>EasyOCR</li>
+            <li>YOLOv5 (segmentation de formulaires)</li>
+            <li>MobileNetV2 (classification de documents)</li>
+          </ul>
+        </article>
+
+        <article class="tech-card">
+          <h3>Chatbot & LLMs</h3>
+          <ul>
+            <li>LangChain</li>
+            <li>OpenAI API</li>
+            <li>Gemini API</li>
+          </ul>
+        </article>
+
+        <article class="tech-card">
+          <h3>Web & Backend</h3>
+          <ul>
+            <li>Flask (API backend)</li>
+            <li>Angular (frontend)</li>
+            <li>(Optionnel) Node.js pour la passerelle API</li>
+          </ul>
+        </article>
+
+        <article class="tech-card">
+          <h3>Base de données & stockage</h3>
+          <ul>
+            <li>MongoDB (documents & métadonnées)</li>
+          </ul>
+        </article>
+
+        <article class="tech-card">
+          <h3>Pré-requis</h3>
+          <ul>
+            <li>Python 3.x</li>
+            <li>Node.js & npm (pour Angular / frontend)</li>
+            <li>MongoDB en local ou en cluster</li>
+            <li>Clés API (OpenAI / Gemini) pour le chatbot</li>
+            <li>GPU recommandé pour les modèles vision & OCR</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- Conception & visuels -->
+    <section>
+      <h2>Conception & visuels</h2>
+
+      <p>
+        Doxaria suit la méthodologie <strong>Team Data Science Process (TDSP)</strong>,
+        depuis la compréhension métier jusqu’au déploiement d’une application web
+        intégrée. L’architecture repose sur plusieurs modules IA spécialisés.
+      </p>
+
+      <h3>Vue d’ensemble de l’architecture</h3>
+      <ul>
+        <li>Module d’upload de documents (bulletins de soins, ordonnances, factures).</li>
+        <li>Pipeline d’extraction OCR (TrOCR + prétraitement des images).</li>
+        <li>Classification automatique des documents (MobileNetV2).</li>
+        <li>Segmentation des champs clés via YOLOv5 (date, montants, zones manuscrites, etc.).</li>
+        <li>Prédiction de remboursement via un modèle de classification (Scikit-learn / XGBoost).</li>
+        <li>Stockage des documents et prédictions dans MongoDB.</li>
+        <li>Chatbot IA connecté aux données et à la documentation métier.</li>
+      </ul>
+
+      <img src="img/doxaria-architecture.png"
+           alt="Architecture globale de Doxaria"
+           class="screenshot" />
+
+      <h3>Modules IA principaux</h3>
+
+      <h4>1. Handwriting Recognition (OCR)</h4>
+      <ul>
+        <li>Utilisation de <strong>TrOCR-large</strong> pour la reconnaissance d’écriture manuscrite.</li>
+        <li>Prétraitement des images (contraste, redimensionnement, binarisation si nécessaire).</li>
+        <li>Extraction de textes structurés à partir de formulaires scannés.</li>
+      </ul>
+
+      <h4>2. Reimbursement Prediction</h4>
+      <ul>
+        <li>Construction d’un dataset à partir de l’historique de remboursements.</li>
+        <li>Ingénierie de features (codes actes, montants, pathologies, etc.).</li>
+        <li>Modèles de classification (Scikit-learn / XGBoost) pour prédire l’éligibilité.</li>
+      </ul>
+      <img src="img/prediction.png"
+           alt="Architecture globale de Doxaria"
+           class="screenshot" />
+      <img src="img/unprediction.png"
+           alt="Architecture globale de Doxaria"
+           class="screenshot" />
+
+
+
+      <h4>3. AI Chatbot Assistant</h4>
+      <ul>
+        <li>Chatbot multilingue basé sur des LLMs (OpenAI / Gemini).</li>
+        <li>Intégration avec LangChain pour injecter le contexte des documents.</li>
+        <li>Réponses guidées par les règles de remboursement et les FAQs métier.</li>
+      </ul>
+      <img src="img/chatbot.png"
+           alt="Architecture globale de Doxaria"
+           class="screenshot" />
+
+
+      <h4>4. Classification & segmentation des documents</h4>
+      <ul>
+        <li><strong>MobileNetV2</strong> pour classer le type de document (ordonnance, facture, bulletin de soin).</li>
+        <li><strong>YOLOv5</strong> pour détecter et découper les zones pertinentes (date, montant, annotations).</li>
+      </ul>
+
+       <img src="img/class.png"
+           alt="Architecture globale de Doxaria"
+           class="screenshot" />
+      <img src="img/classif.png"
+           alt="Architecture globale de Doxaria"
+           class="screenshot" />
+
+      
+      <p class="visuels-note">
+        <em>
+         
+        </em>
+      </p>
+    </section>
+
+
+    <!-- Mise en route -->
+    <section>
+      <h2>Mise en route (procédure d’installation)</h2>
+
+      <p>
+        Doxaria est structuré selon la méthodologie TDSP, avec un backend IA en Python
+        et une interface web en Angular.
+      </p>
+
+      <ol>
+        <li>
+          <strong>Cloner le dépôt :</strong><br />
+          <code>git clone &lt;url_du_repo_doxaria&gt;</code><br />
+          <code>cd doxaria</code>
+        </li>
+        <li>
+          <strong>Configurer l’environnement Python (backend IA) :</strong><br />
+          <code>cd backend</code><br />
+          <code>python -m venv .venv</code><br />
+          <code>source .venv/bin/activate</code> (Linux / macOS) ou<br />
+          <code>.venv\Scripts\activate</code> (Windows)<br />
+          <code>pip install -r requirements.txt</code>
+        </li>
+        <li>
+          <strong>Configurer l’accès à MongoDB et aux APIs LLM :</strong><br />
+          Créer un fichier <code>.env</code> (URI Mongo, clés OpenAI / Gemini, etc.).
+        </li>
+        <li>
+          <strong>Lancer l’API Flask :</strong><br />
+          <code>flask run</code> ou <code>python app.py</code>
+        </li>
+        <li>
+          <strong>Installer et lancer le frontend Angular :</strong><br />
+          <code>cd frontend</code><br />
+          <code>npm install</code><br />
+          <code>ng serve</code><br />
+          puis ouvrir l’URL (souvent <code>http://localhost:4200</code>).
+        </li>
+        <li>
+          (Optionnel) <strong>Activer les modèles lourds (YOLO, TrOCR) :</strong><br />
+          Télécharger les poids correspondants et mettre à jour les chemins dans la configuration.
+        </li>
+      </ol>
+    </section>
+
+
+    <!-- Licence -->
+    <section>
+      <h2>Licence</h2>
+      <p>
+        Doxaria est un projet académique développé dans le cadre d’un programme de
+        Data Science à l’ESPRIT School of Engineering. Le code est pour l’instant
+        stocké dans un dépôt privé et n’est pas encore distribué sous une licence
+        open source publique.
+      </p>
+      <p>
+        À l’avenir, le projet pourra être ouvert sous une licence de type
+        <strong>MIT</strong> ou <strong>Apache&nbsp;2.0</strong>, après validation
+        des aspects légaux et des dépendances.
+      </p>
+    </section>
+
+
+    <!-- Contribution -->
+    <section>
+      <h2>Contribution</h2>
+      <p>
+        Les contributions se font au sein de l’équipe projet via des branches Git,
+        des pull requests et des revues de code.
+      </p>
+      <ul>
+        <li>Amélioration de la précision des modèles (OCR, prédiction, classification).</li>
+        <li>Optimisation des temps d’inférence et de traitement des documents.</li>
+        <li>Enrichissement du chatbot (nouvelles sources métier, nouveaux scénarios).</li>
+        <li>Amélioration de l’UX de l’application web et des dashboards.</li>
+        <li>Renforcement de la documentation (technique & utilisateur).</li>
+      </ul>
+    </section>
+
+
+    <!-- Auteurs -->
+    <section>
+      <h2>Auteurs</h2>
+      <ul>
+        <li><strong>Hajer Mabrouk</strong></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 – Portfolio de Hajer Mabrouk – Projet Doxaria
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>MatchINI – Fiche projet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="topbar">
+    <div class="logo">HM.</div>
+    <nav class="nav-links">
+      <a href="index.html#accueil">Accueil</a>
+      <a href="index.html#presentation">Présentation</a>
+      <a href="index.html#projets" class="active">Projets</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- CONTENU DU PROJET -->
+  <main class="section project-page">
+    <p class="project-back">
+      <a href="index.html#projets">← Retour aux projets</a>
+    </p>
+
+    <!-- Nom & description courte -->
+    <header class="project-header">
+<h1 class="project-title-centered">MatchINI – Plateforme d’IA pour le recrutement</h1>
+      <p class="project-subtitle">
+        MatchINI est une plateforme de recrutement augmentée par l’IA qui combine
+        NLP, Computer Vision et LLMs pour :
+        automatiser la présélection des candidats, coacher les entretiens et générer
+        des lettres de motivation personnalisées.
+      </p>
+
+      <div class="project-meta-grid">
+        <span class="meta-pill">🧠 IA & NLP</span>
+        <span class="meta-pill">🎯 Recrutement & RH</span>
+        <span class="meta-pill">📄 CV / Job Description Matching</span>
+        <span class="meta-pill">🎥 AI Interview Coach</span>
+        <span class="meta-pill">✍️ Cover Letter Generator</span>
+      </div>
+    </header>
+
+
+    <!-- Objectifs -->
+    <section>
+      <h2>Objectifs du projet</h2>
+
+      <div class="two-columns">
+        <div>
+          <h3>Objectifs métier (Business)</h3>
+          <ul>
+            <li>Automatiser la présélection des candidats (matching CV / offres).</li>
+            <li>Améliorer la qualité des profils shortlistés.</li>
+            <li>Donner un feedback personnalisé et actionnable aux candidats.</li>
+            <li>Réduire le temps passé par les RH sur les tâches répétitives.</li>
+            <li>Rendre le processus plus transparent et plus équitable.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Objectifs Data & IA</h3>
+          <ul>
+            <li>Extraire des entités structurées à partir de CV et Job Descriptions.</li>
+            <li>Développer un modèle de matching basé sur le NLP.</li>
+            <li>Analyser le comportement en entretien (émotions, posture, rythme de parole).</li>
+            <li>Générer des rapports et feedbacks interprétables pour les candidats.</li>
+            <li>Générer des lettres de motivation personnalisées via LLMs.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Technologies / prérequis -->
+    <section>
+      <h2>Technologies utilisées & prérequis</h2>
+
+      <div class="tech-grid">
+        <article class="tech-card">
+          <h3>Backend & Data</h3>
+          <ul>
+            <li>Python 3.x</li>
+            <li>Pandas, NumPy</li>
+            <li>Scikit-learn</li>
+          </ul>
+        </article>
+
+        <article class="tech-card">
+          <h3>NLP & LLMs</h3>
+          <ul>
+            <li>Groq API + Llama</li>
+            <li>Whisper / STT</li>
+            <li>LangChain</li>
+            <li>Llama&nbsp;3 via Ollama</li>
+          </ul>
+        </article>
+
+        <article class="tech-card">
+          <h3>Computer Vision & Audio</h3>
+          <ul>
+            <li>OpenCV</li>
+            <li>librosa</li>
+            <li>MediaPipe / CNN pour les émotions & la posture</li>
+          </ul>
+        </article>
+
+        <article class="tech-card">
+          <h3>Interface & orchestration</h3>
+          <ul>
+            <li>Streamlit (dashboard web)</li>
+            <li>SerpAPI (recherche d’offres)</li>
+            <li>ffmpeg (traitement vidéo/audio)</li>
+          </ul>
+        </article>
+
+        <article class="tech-card">
+          <h3>Pré-requis</h3>
+          <ul>
+            <li>Python 3.x installé</li>
+            <li>Git</li>
+            <li>(Optionnel) GPU pour les modèles lourds (STT, vision)</li>
+            <li>Docker + Ollama pour exécuter Llama&nbsp;3 en local</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- Conception & visuels -->
+    <section>
+      <h2>Conception & visuels</h2>
+
+      <p>
+        MatchINI est structuré en trois grands modules, chacun avec son propre
+        workflow IA et ses composants techniques.
+      </p>
+
+      <h3>1. CV / Job Description Matching</h3>
+      <ul>
+        <li>Upload de plusieurs CV et d’une offre (PDF).</li>
+        <li>Extraction de texte avec PyMuPDF.</li>
+        <li>Extraction d’entités métier via LLM (skills, années d’expérience, rôle, etc.).</li>
+        <li>Normalisation des compétences (taxonomie interne).</li>
+        <li>Calcul d’un score global pondéré (skills, expérience, formation).</li>
+        <li>Génération d’un rapport : MATCH / NO MATCH + détails.</li>
+      </ul>
+      <img src="img/matchini-matching-workflow.png"
+           alt="Workflow de matching CV / offre – MatchINI"
+           class="screenshot" />
+
+      <h3>2. AI Interview Coach</h3>
+      <ul>
+        <li>Transcription audio (vidéo → texte) avec Whisper / STT.</li>
+        <li>Analyse du discours : filler words, sentiment, rythme (WPM), pauses.</li>
+        <li>Analyse vidéo : émotions, posture, regard, présence.</li>
+        <li>Consolidation dans un rapport de coaching (forces, axes d’amélioration, conseils).</li>
+      </ul>
+      <img src="img/matchini-interview-coach.png"
+           alt="Pipeline AI Interview Coach – MatchINI"
+           class="screenshot" />
+
+      <h3>3. Génération de lettres de motivation</h3>
+      <ul>
+        <li>Recherche d’offres en temps réel via SerpAPI.</li>
+        <li>Parsing du CV avec LangChain (PyPDFLoader) → structure JSON.</li>
+        <li>Génération de la lettre via Llama&nbsp;3 (Ollama), en s’alignant sur l’offre.</li>
+      </ul>
+      <img src="img/matchini-cover-letter-flow.png"
+           alt="Workflow de génération de lettre de motivation – MatchINI"
+           class="screenshot" />
+         <h3>Architecture de projet</h3>
+          <img src="img/arch.png"
+           alt="Architecture"
+           class="screenshot" />
+           <h3> vidéo Démonstratif </h3>
+
+<video class="project-video" controls>
+  <source src="videos/Copie de PI finale (1).mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la lecture vidéo.
+</video>
+
+
+      <p class="visuels-note">
+        <em>
+         
+        </em>
+      </p>
+    </section>
+
+
+    <!-- Mise en route -->
+    <section>
+      <h2>Mise en route (procédure d’installation)</h2>
+
+      <p>
+        MatchINI est organisé en plusieurs sous-modules
+        (<code>matching_system/</code>, <code>interview_coach/</code>,
+        <code>cover_letter_gen/</code>). Voici une procédure type pour
+        lancer l’environnement de développement.
+      </p>
+
+      <ol>
+        <li>
+          <strong>Cloner le dépôt (accès privé) :</strong><br />
+          <code>git clone &lt;url_du_repo_prive&gt;</code><br />
+          <code>cd MatchIni</code>
+        </li>
+        <li>
+          <strong>Créer et activer un environnement virtuel :</strong><br />
+          <code>python -m venv .venv</code><br />
+          <code>source .venv/bin/activate</code> (Linux / macOS)<br />
+          ou<br />
+          <code>.venv\Scripts\activate</code> (Windows)
+        </li>
+        <li>
+          <strong>Installer les dépendances Python :</strong><br />
+          <code>pip install -r requirements.txt</code>
+        </li>
+        <li>
+          <strong>Configurer les variables d’environnement :</strong><br />
+          Créer un fichier <code>.env</code> avec les clés nécessaires
+          (Groq, OpenAI/Whisper, SerpAPI, etc.).
+        </li>
+        <li>
+          <strong>Lancer l’interface Streamlit :</strong><br />
+          <code>streamlit run app.py</code><br />
+          puis ouvrir l’URL indiquée (souvent <code>http://localhost:8501</code>).
+        </li>
+        <li>
+          (Optionnel) <strong>Lancer les services complémentaires :</strong><br />
+          - Démarrer Ollama + Llama&nbsp;3 pour la génération locale.<br />
+          - Lancer les scripts dédiés pour l’AI Interview Coach si séparés.
+        </li>
+      </ol>
+    </section>
+
+
+    <!-- Licence -->
+    <section>
+      <h2>Licence</h2>
+      <p>
+        MatchINI est pour l’instant un projet académique développé dans le cadre
+        d’un cursus en Data & IA. Le dépôt est privé et n’est pas encore publié
+        sous une licence open source publique.
+      </p>
+      <p>
+        À terme, le projet pourra être ouvert sous une licence de type
+        <strong>MIT</strong> ou <strong>Apache&nbsp;2.0</strong>, après revue
+        de la propriété intellectuelle et des dépendances utilisées.
+      </p>
+    </section>
+
+
+    <!-- Contribution -->
+    <section>
+      <h2>Contribution</h2>
+      <p>
+        Les contributions se font aujourd’hui au sein de l’équipe projet
+        (pull requests sur le dépôt GitHub privé, revues de code, tests).
+      </p>
+      <ul>
+        <li>Création de nouvelles fonctionnalités (nouveaux modèles, nouveaux rapports).</li>
+        <li>Amélioration de l’UX Streamlit et des visualisations.</li>
+        <li>Optimisation des performances (temps de traitement vidéo, temps de matching).</li>
+        <li>Rédaction et amélioration de la documentation technique.</li>
+      </ul>
+    </section>
+
+
+    <!-- Auteurs -->
+    <section>
+      <h2>Auteurs</h2>
+      <ul>
+        <li><strong>Hajer Mabrouk</strong> </li>
+        
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 – Portfolio de Hajer Mabrouk <Main></Main> – Projet MatchINI
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
